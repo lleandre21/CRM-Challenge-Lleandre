@@ -3,10 +3,17 @@
 class CustomersController < ApplicationController
   def index
     @customer = Customer.all
-    # @customer = Customer.order(:name)
   end
 
-  def show
-    @customer = Customer.find(params[:id])
+  # def show
+  #   @customer = Customer.find(params[:id])
+  # end
+
+  def alphabetized
+    @customer = Customer.order(:fullname)
+  end
+
+  def missing_email
+    @customer = Customer.where(email: [nil, ''])
   end
 end
