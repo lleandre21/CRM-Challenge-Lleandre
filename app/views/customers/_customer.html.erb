@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">
+      <%= customer.fullname%>
+    </h4>
+  </div>
+
+  <% if customer.image.present? %>
+    <%= image_tag customer.image, class: 'card-img-top img-fluid mx-auto d-block' %>
+  <% end %>
+
+  <div class="card-block">
+      <p class="card-text">
+        <%= customer.phone%>
+      </p>
+  </div>
+
+  <div class="card-block">
+      <p class="card-text">
+        <%= customer.email %>
+      </p>
+  </div>
+</div>
