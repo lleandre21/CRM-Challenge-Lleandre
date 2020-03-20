@@ -1,23 +1,29 @@
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">
-      <%= customer.fullname%>
-    </h4>
-  </div>
+<div class=column>
+  <div class="card">
+      <div class="card-content">
+        <h4 class="subtitle is-5">
+          <%= customer.fullname%>
+        </h4>
 
-  <% if customer.image.present? %>
-    <%= image_tag customer.image, class: 'card-img-top img-fluid mx-auto d-block' %>
-  <% end %>
-
-  <div class="card-block">
-      <p class="card-text">
-        <%= customer.phone%>
-      </p>
-  </div>
-
-  <div class="card-block">
-      <p class="card-text">
-        <%= customer.email %>
-      </p>
+      <% if customer.image.present? %>
+      <div class="card-image">
+        <figure class="image is-128x128">
+      <%= image_tag customer.image%>
+        </figure>
+      </div>
+      <% end %>
+          <p>
+            <%= customer.phone%>
+          </p>
+      </div>
+          <div class="card-content">
+          <% if customer.email.empty?%>
+          <br>
+          <% else %>
+          <p>
+          <%= customer.email %>
+          </p>
+          <% end %>
+          </div>
   </div>
 </div>
