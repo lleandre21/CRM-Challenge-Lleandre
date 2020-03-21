@@ -14,6 +14,13 @@
     <section class="section">
         <div class="container>">
       <h1 class="title is-1"><%= link_to 'Hello World', root_path %></h1>
+    <nav class="breadcrumb is-centered is-large" aria-label="breadcrumbs">
+    <ul>
+      <li><%= link_to 'All Employees', root_path%></li>
+      <li><%= link_to 'All Employees (Alphabetized)',  '/customers/alphabetized'%></li>
+      <li><%= link_to 'All Employees with missing email', '/customers/missing_email'%></li>
+    </ul>
+  </nav>
       <%= yield %>
       </div>
     </section>
